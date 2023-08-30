@@ -1,3 +1,4 @@
+import TodoListTable from "@/components/todoListTable";
 import type { Metadata } from "next";
 
 export const runtime = "experimental-edge";
@@ -10,20 +11,21 @@ export const metadata: Metadata = {
 const getTodoList = async () => {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
-    
-    return response.json()
-  } catch (error){
-    console.error(error)
+
+    return response.json();
+  } catch (error) {
+    console.error(error);
   }
-}
+};
 
 export default async function TodosPage() {
-  
   const todos = await getTodoList();
   return (
     <>
       <h1>Todos</h1>
-      <p>{String(todos[0].title)}</p>
+      <div>
+        <TodoListTable todoList={todos} />
+      </div>
     </>
   );
 }

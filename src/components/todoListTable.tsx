@@ -1,6 +1,11 @@
 import { Todo } from "@/types";
+import { FC } from "react";
 
-export default function TodoListTable(todoList: Todo[]) {
+type Props = {
+  todoList: Todo[]
+}
+
+const TodoListTable: FC<Props> = ({ todoList }) => {
   return (
     <table>
       <thead>
@@ -32,4 +37,5 @@ export default function TodoListTable(todoList: Todo[]) {
       </tfoot>
     </table>
   );
-}
+};
+export default TodoListTable;

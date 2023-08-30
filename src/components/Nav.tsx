@@ -8,7 +8,7 @@ export default function Nav() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/current-conditions">Current Conditions</Link>
+          <Link href="/todos">TodoList</Link>
         </li>
         <li>
           <Link href="/search">Search</Link>
